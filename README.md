@@ -1,11 +1,42 @@
 # Pollr
 
-Restapi:
+##Restapi:
 
-- GET-> Poll ->getPolls
-- GET-> Poll answers by poll id->getAnswersByPollId
-- GET-> User Answers by poll id->getUserAnswersByPollId
-- POST-> compare with User->login
-- POST-> new Poll-> createPoll
-- POST-> new UserAnswer->vote
-- (DELETE-> Poll->deletePoll)
+###Session Management
+
+ - /authenticate
+	 - POST
+	 - username, password
+	 - returns successStatus(boolean), userData
+ - /isLoggedIn
+	 - GET
+	 - returns sessionStatus
+ - /logout
+	 - POST
+	 - returns successStatus(boolean)
+### Poll Management
+ - /polls
+	 - GET
+	 - returns all available polls
+ - /pollStat
+	 - GET
+	 - pollId
+	 - returns stat for specific poll
+ - /pollOptions
+	 - GET
+	 - pollId
+	 - returns available options for specific poll
+ - /pollOption
+	 - POST
+	 - answerId
+ - /poll
+	 - POST
+	 - pollData
+	 - returns pollId
+ - /pollOption
+	 - POST
+	 - pollId, optionData
+	 - returns optionId
+ - /pollOption
+	 - DELETE
+	 - optionId
