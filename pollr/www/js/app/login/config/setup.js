@@ -1,11 +1,11 @@
-define([], function() {
+define(['login/namespace'], function(namespace) {
   return function(module) {
     module.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
       $urlRouterProvider.otherwise('/login');
       $stateProvider.state('login', {
         url: '/login',
         templateUrl: 'js/app/login/template/login.html',
-        controller: 'loginController'
+        controller: namespace + '.loginController'
       });
     }]);
     module.run(function($ionicPlatform) {
