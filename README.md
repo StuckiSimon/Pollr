@@ -14,6 +14,7 @@
  - /logout
 	 - POST
 	 - returns successStatus(boolean)
+
 ### Poll Management
  - /polls
 	 - GET
