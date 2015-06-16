@@ -1,0 +1,27 @@
+
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.ionicframework.pollr378621" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <icon density="ldpi" src="res/android/ldpi.png" />
+    <icon density="mdpi" src="res/android/mdpi.png" />
+    <icon density="hdpi" src="res/android/hdpi.png" />
+    <icon density="xhdpi" src="res/android/xhdpi.png" />
+    <name>pollr</name>
+    <description>
+        An Ionic Framework and Cordova project.
+    </description>
+    <author email="hi@ionicframework" href="http://ionicframework.com/">
+      Ionic Framework Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="16" />
+    <preference name="BackupWebStorage" value="none" />
+    <icon density="mdpi" height="48" platform="android" src="res/android/mdpi.png" width="48" />
+    <icon density="ldpi" height="36" platform="android" src="res/android/ldpi.png" width="36" />
+    <icon density="hdpi" height="72" platform="android" src="res/android/hdpi.png" width="72" />
+    <icon density="xhdpi" height="96" platform="android" src="res/android/xhdpi.png" width="96" />
+</widget>
