@@ -18,9 +18,9 @@
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
     <icon density="mdpi" height="48" platform="android" src="res/android/mdpi.png" width="48" />
-    <icon density="mdpi" height="36" platform="android" src="res/android/ldpi.png" width="36" />
-    <icon density="mdpi" height="72" platform="android" src="res/android/hdpi.png" width="72" />
-    <icon density="mdpi" height="96" platform="android" src="res/android/xhdpi.png" width="96" />
+    <icon density="ldpi" height="36" platform="android" src="res/android/ldpi.png" width="36" />
+    <icon density="hdpi" height="72" platform="android" src="res/android/hdpi.png" width="72" />
+    <icon density="xhdpi" height="96" platform="android" src="res/android/xhdpi.png" width="96" />
     <platform name="android">
         <icon density="ldpi" src="res/android/ldpi.png" />
         <icon density="mdpi" src="res/android/mdpi.png" />
