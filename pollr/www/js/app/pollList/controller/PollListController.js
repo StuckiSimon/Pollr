@@ -14,7 +14,9 @@ define(['pollList/namespace'], function(namespace) {
       $scope.openPoll = function(poll) {
         if (poll.alreadyVoted) {
           // open stats view
-
+          $state.go('detailView', {
+            pollId: poll.id
+          });
         } else {
           // open vote view
           $state.go('voteView', {
