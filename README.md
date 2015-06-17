@@ -4,26 +4,26 @@
 
 ###Session Management
 
- - /authenticate
+ - /authenticate -> implemented
 	 - POST
 	 - username, password
 	 - returns successStatus(boolean), userData
- - /isLoggedIn
+ - /isLoggedIn -> implemented
 	 - GET
 	 - returns sessionStatus
- - /logout
+ - /logout -> implemented
 	 - POST
 	 - returns successStatus(boolean)
 
 ### Poll Management
- - /polls
+ - /polls -> implemented
 	 - GET
 	 - returns all available polls
- - /pollStat
+ - /pollStat -> implemented
 	 - GET
 	 - pollId
 	 - returns stat for specific poll
- - /pollOptions
+ - /pollOptions -> implemented
 	 - GET
 	 - pollId
 	 - returns available options for specific poll
