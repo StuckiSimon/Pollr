@@ -17,10 +17,12 @@
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
-    <icon density="mdpi" height="48" platform="android" src="res/drawable-mdpi/icon.png" width="48" />
-    <icon density="ldpi" height="36" platform="android" src="res/drawable-ldpi/icon.png" width="36" />
-    <icon density="hdpi" height="72" platform="android" src="res/drawable-hdpi/icon.png" width="72" />
-    <icon density="xhdpi" height="96" platform="android" src="res/drawable-xhdpi/icon.png" width="96" />
-    <icon height="96" platform="android" src="res/drawable/icon.png" width="96" />
+    <platform name="android">
+        <icon density="ldpi" src="res/drawable-ldpi/icon.png" />
+        <icon density="mdpi" src="res/drawable-mdpi/icon.png" />
+        <icon density="hdpi" src="res/drawable-hdpi/icon.png" />
+        <icon density="xhdpi" src="res/drawable-xhdpi/icon.png" />
+        <icon src="res/drawable/icon.png" />
+    </platform>
     <engine name="android" spec="^4.0.2" />
 </widget>
