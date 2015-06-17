@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ion-pane>
   <ion-header-bar class="bar-stable">
-    <h1 class="title">Pollr - Your Polls</h1>
+    <h1 class="title">Pollr - Your Polls{{data.showReorder}}</h1>
   </ion-header-bar>
   <ion-content>
-    List
+    <ion-list show-delete="data.showDelete">
+      <ion-item ng-repeat="poll in pollList" data-on-release="openPoll(poll)">{{poll.title}}</ion-item>
+    </ion-list>
   </ion-content>
 </ion-pane>
