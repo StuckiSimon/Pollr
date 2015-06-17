@@ -24,5 +24,6 @@
         <icon density="xhdpi" src="res/drawable-xhdpi/icon.png" />
         <icon src="res/drawable/icon.png" />
     </platform>
+    <icon src="res/drawable/icon.png" />
     <engine name="android" spec="^4.0.2" />
 </widget>
