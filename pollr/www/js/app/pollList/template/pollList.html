@@ -1,7 +1,8 @@
 <ion-pane>
   <ion-header-bar class="bar-stable">
     <div class="buttons">
-      <history-back></history-back>
+      <history-back>
+      </history-back>
     </div>
     <h1 class="title">Pollr - Your Polls{{data.showReorder}}</h1>
     <div class="buttons">
@@ -12,7 +13,11 @@
     <ion-refresher pulling-text="Pull to refresh" data-on-refresh="reloadPollList()">
     </ion-refresher>
     <ion-list>
-      <ion-item ng-repeat="poll in pollData.list" data-ng-click="openPoll(poll)">{{poll.title}}</ion-item>
+      <ion-item ng-repeat="poll in pollData.list" data-ng-click="openPoll(poll)">
+        <span>{{poll.title}}</span>
+        <span ng-if="poll.voted" class="badge badge-balanced">voted</span>
+        <span ng-if="!poll.voted" class="badge badge-assertive">not voted</span>
+      </ion-item>
     </ion-list>
   </ion-content>
 </ion-pane>
