@@ -35,20 +35,38 @@ body {
 
 .bar-header {
   background-color: $midnight;
+  padding: 0px;
   h1 {
     color: $cloud;
   }
-  .button {
-    background-color: $emerald;
-    color: $cloud;
-    border: 0px;
-    font-style: bold;
-  }
-  .button-back {
-    background-color: $midnight;
-    color: $cloud;
-    border: 0px;
-    font-style: bold;
+
+  .buttons {
+
+    width: 5%;
+    height: 100%;
+    top: 0px !important;
+    right: 0px !important;
+    bottom: 0px !important;
+
+    .button {
+      background-color: $emerald;
+      color: $cloud;
+      border: 0px;
+      font-style: bold;
+      width: 100%;
+      font-size: 140%;
+    }
+
+
+    .button-back {
+      background-color: $midnight;
+      color: $cloud;
+      border: 0px;
+      font-style: bold;
+      width: 100%;
+      border-right: 1px $cloud solid;
+      font-size: 140%;
+    }
   }
 }
 
