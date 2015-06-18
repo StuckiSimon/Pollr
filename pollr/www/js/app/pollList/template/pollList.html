@@ -1,6 +1,9 @@
 <ion-pane>
   <ion-header-bar class="bar-stable">
     <h1 class="title">Pollr - Your Polls{{data.showReorder}}</h1>
+    <div class="buttons">
+      <button class="button" data-ng-click="openAddPollView()">+</button>
+    </div>
   </ion-header-bar>
   <ion-content>
     <ion-refresher pulling-text="Pull to refresh" data-on-refresh="reloadPollList()">

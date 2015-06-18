@@ -10,6 +10,16 @@ define(['voteView/namespace', 'shared/webServiceManager/namespace'], function(na
       pollManagementService.getPollOptions(pollId).success(function(data) {
         $scope.pollData.options = data;
       });
+
+      var selectedOption = undefined;
+
+      $scope.selectOption = function(index) {
+        if (selectedOption !== undefined) {
+          $scope.pollData.options[selectedOption].selected = false;
+        }
+        selectedOption = index;
+        $scope.pollData.options[selectedOption].selected = true;
+      };
     }]);
   };
 });

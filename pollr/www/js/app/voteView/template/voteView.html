@@ -4,7 +4,7 @@
   </ion-header-bar>
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="option in pollData.options">{{option.name}}</ion-item>
+      <ion-item ng-repeat="(index, option) in pollData.options" ng-click="selectOption(index)"><i ng-if="option.selected" class="icon ion-checkmark"></i>{{option.name}}</ion-item>
     </ion-list>
   </ion-content>
 </ion-pane>

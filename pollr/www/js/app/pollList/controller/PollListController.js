@@ -12,7 +12,9 @@ define(['pollList/namespace', 'shared/webServiceManager/namespace'], function(na
         });
       };
 
-      $scope.reloadPollList();
+      $scope.openAddPollView = function() {
+        $state.go('addPollView');
+      };
 
       $scope.openPoll = function(poll) {
         // TODO: server doesn't return required data -> no alreadyVoted property
@@ -28,6 +30,10 @@ define(['pollList/namespace', 'shared/webServiceManager/namespace'], function(na
           });
         }
       };
+
+      $scope.reloadPollList();
+
+      console.log($scope);
 
     }]);
   };
