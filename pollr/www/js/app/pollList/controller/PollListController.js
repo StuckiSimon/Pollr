@@ -21,7 +21,7 @@ define(['pollList/namespace', 'shared/webServiceManager/namespace'], function(na
 
       $scope.openPoll = function(poll) {
         // TODO: server doesn't return required data -> no alreadyVoted property
-        if (poll.alreadyVoted) {
+        if (poll.voted) {
           // open stats view
           $state.go('detailView', {
             pollId: poll.id
