@@ -8,9 +8,6 @@ define(['shared/webServiceManager/namespace'], function(namespace) {
             password: password
           }).success(function(data, status, headers, config) {
             console.log(data, status);
-            $http.get('http://pollr.lamatouren.ch/pollr/isLoggedIn').success(function() {
-              console.log(arguments);
-            })
           // this callback will be called asynchronously
           // when the response is available
           }).error(function(data, status, headers, config) {

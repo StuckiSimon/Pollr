@@ -11,11 +11,14 @@ require([
   "detailView/module",
   "shared/webServiceManager/module"],
   function(loginNamespace, pollListNamespace, webServiceManagerNamespace, voteViewNamespace, detailViewNamespace) {
-    angular.bootstrap(document, [
-      loginNamespace,
+    var app = angular.module("main", ["ionic", loginNamespace,
       pollListNamespace,
       webServiceManagerNamespace,
       voteViewNamespace,
-      detailViewNamespace]
+      detailViewNamespace]);
+    app.config(['$httpProvider', function($httpProvider) {
+      $httpProvider.defaults.withCredentials = true;
+    }]);
+    angular.bootstrap(document, ["main"]
     );
   });

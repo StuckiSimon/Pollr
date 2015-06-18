@@ -3,6 +3,8 @@
     <h1 class="title">Pollr - Your Polls</h1>
   </ion-header-bar>
   <ion-content>
-    Vote View
+    <ion-list>
+      <ion-item ng-repeat="option in pollData.options">{{option.name}}</ion-item>
+    </ion-list>
   </ion-content>
 </ion-pane>

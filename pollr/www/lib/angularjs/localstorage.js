@@ -1,13 +1,6 @@
 (function(angular, factory) {
   'use strict';
-
-  if (typeof define === 'function' && define.amd) {
-    define('ngStorage', function() {
-      return factory(angular);
-    });
-  } else {
-    return factory(angular);
-  }
+  return factory(angular);
 }(typeof angular === 'undefined' ? null : angular, function(angular) {
 
   'use strict';
