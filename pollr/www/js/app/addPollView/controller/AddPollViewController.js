@@ -2,6 +2,9 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace'], function
   return function(module) {
     module.controller(namespace + ".addPollViewController", ['$scope', '$ionicModal', webServiceManagerNamespace + '.pollManagementService', function($scope, $ionicModal, pollManagementService) {
 
+      var optionMinTextLength = 2,
+        titleMinTextLength = 4;
+
       $scope.pollData = {
         title: "",
         options: []
@@ -32,7 +35,7 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace'], function
       };
 
       $scope.addOptionToPollData = function() {
-        if ($scope.dialogData.newOption.length === 0) {
+        if ($scope.dialogData.newOption.length < optionMinTextLength) {
           return;
         }
         $scope.pollData.options.push({
@@ -45,7 +48,7 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace'], function
       $scope.newOptionIsValid = function() {
         var option = $scope.dialogData.newOption,
           options = $scope.pollData.options;
-        if (option.length > 0) {
+        if (option.length >= optionMinTextLength) {
           for (var i in options) {
             if (option === options[i].title) {
               return false;
@@ -59,7 +62,7 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace'], function
       $scope.newPollIsValid = function() {
         var options = $scope.pollData.options,
           title = $scope.pollData.title;
-        if (title.length > 0 && options.length > 1) {
+        if (title.length >= titleMinTextLength && options.length > 1) {
           return true;
         }
         return false;
