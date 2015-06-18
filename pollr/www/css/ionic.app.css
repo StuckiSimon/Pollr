@@ -7718,8 +7718,7 @@ body {
   width: 100%;
   background-color: #e74c3c !important;
   color: #ecf0f1 !important;
-  padding: 4%;
-  text-align: center;
-  margin: 0 auto; }
+  padding: 15px;
+  text-align: center; }
   .error-message .error-message-span {
     font-size: 120%; }
