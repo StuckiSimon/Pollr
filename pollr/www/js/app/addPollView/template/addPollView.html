@@ -16,6 +16,6 @@
       <ion-list>
         <ion-item ng-repeat="option in pollData.options">{{option.title}}</ion-item>
       </ion-list>
-      <ion-button ng-disabled="!newPollIsValid();" class="button button-block button-positive" ng-click="addOptionToPollData()">Save Poll</ion-button>
+      <ion-button ng-disabled="!newPollIsValid();" class="button button-block button-positive" ng-click="createPoll()">Save Poll</ion-button>
     </ion-content>
   </ion-pane>

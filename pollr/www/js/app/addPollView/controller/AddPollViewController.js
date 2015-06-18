@@ -1,6 +1,6 @@
-define(['addPollView/namespace', 'shared/webServiceManager/namespace', 'shared/pollValidator/namespace'], function(namespace, webServiceManagerNamespace, pollValidatorNamespace) {
+define(['addPollView/namespace', 'shared/webServiceManager/namespace', 'shared/pollValidator/namespace', 'shared/historyHandler/namespace'], function(namespace, webServiceManagerNamespace, pollValidatorNamespace, historyHandlerNamespace) {
   return function(module) {
-    module.controller(namespace + ".addPollViewController", ['$scope', '$ionicModal', webServiceManagerNamespace + '.pollManagementService', pollValidatorNamespace + '.validator', function($scope, $ionicModal, pollManagementService, validator) {
+    module.controller(namespace + ".addPollViewController", ['$scope', '$ionicModal', webServiceManagerNamespace + '.pollManagementService', pollValidatorNamespace + '.validator', historyHandlerNamespace + '.historyService', function($scope, $ionicModal, pollManagementService, validator, historyService) {
 
       // Main Screen Data
       $scope.pollData = {
@@ -55,6 +55,10 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace', 'shared/p
 
       $scope.newPollIsValid = function() {
         return validator.isValidPoll($scope.pollData.title, $scope.pollData.options);
+      };
+
+      $scope.createPoll = function() {
+        historyService.goBack();
       };
 
     }]);

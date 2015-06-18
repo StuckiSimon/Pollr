@@ -4,9 +4,9 @@ define(['shared/historyHandler/namespace'], function(namespace) {
       return {
         replace: true,
         template: '<button class="button-back ion-chevron-left" data-ng-click="goBack()"></button>',
-        controller: ['$scope', function($scope) {
+        controller: ['$scope', namespace + '.historyService', function($scope, historyService) {
           $scope.goBack = function() {
-            parent.history.back();
+            historyService.goBack();
           };
         }]
       };
