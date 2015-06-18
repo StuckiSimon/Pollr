@@ -4,38 +4,38 @@
 
 ###Session Management
 
- - /authenticate -> implemented
+ - /authenticate
 	 - POST
 	 - parameters: username, password
 		 - example: `{"username"="brudi","password"="***"}`
 	 - returns
 		 - success: `{"id":"1","user_name":"brudi","password":"***","real_name":"dave"}`
 		 - error: `{"auth":"false"}`
- - /isLoggedIn -> implemented
+ - /isLoggedIn
 	 - GET
 	 - returns
 		 - success: `{"auth":"true"}'`
 		 - error: `{"auth":"false"}`
- - /logout -> implemented
+ - /logout
 	 - POST
 	 - returns
 		 - success: `{"isLoggedOut":"true"}`
 		 - error: `{"isLoggedOut":"false"}`
 
 ### Poll Management
- - /polls -> implemented
+ - /polls
 	 - GET
 	 - returns
-		 - success: `[{"id":"1","title":"Mittag","User_id":"1"},{"id":"2","title":"Code","User_id":"2"}]`
+		 - success: `[[{"id":"1","title":"Mittag","User_id":"1"},{"voted":true}],[{"id":"2","title":"Code","User_id":"2"},{"voted":true}],[{"id":"3","title":"parrat?","User_id":"1"},{"voted":false}],`
 		 - error: `{"auth":"false"}`
- - /pollStat -> implemented
+ - /pollStat
 	 - GET
 	 - parameter: pollId
 		 - example: `http://localhost/_PollrRestApiV2/pollr/pollStat?pollId=1`
 	 - returns
 		 - success: `[[{"id":"1","name":"mac","Poll_id":"1","voters":2},{"id":"2","name":"kantine","Poll_id":"1","voters":0}],{"numberOfPossibleVoters":2}]`
 		 - error: `{"auth":"false"}`
- - /pollOptions -> implemented
+ - /pollOptions
 	 - GET
 	 - parameter: pollId
 		 - example: `http://localhost/_PollrRestApiV2/pollr/pollOptions?pollId=1`
@@ -60,7 +60,7 @@
 		 - error:
 		 	- unauthenticated: `{"auth":"false"}`
 			- error by insertion: `{"status":"ERROR","messages":{"messageObject"}}`
- - /vote -> 
+ - /vote
 	 - POST
 	 - parameter: userId, answerId
 		 - example: `{"userId"="1","answerId"="6"}`
@@ -77,6 +77,6 @@
 		 - success: `{"voted":"true"}` or `{"voted":"false"}`
 		 - error: 
 			 - unauthenticated: `{"auth":"false"}`
- - /pollOption
+ - /pollOption -> not implemented
 	 - DELETE
 	 - optionId
