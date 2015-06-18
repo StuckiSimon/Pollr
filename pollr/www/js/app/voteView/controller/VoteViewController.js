@@ -13,21 +13,21 @@ define(['voteView/namespace', 'shared/webServiceManager/namespace'], function(na
       });
 
       var selectedOption = undefined;
-      var selectedId = undefined;
 
-      $scope.selectOption = function(index, id) {
+      $scope.selectOption = function(index) {
         if (selectedOption !== undefined) {
           $scope.pollData.options[selectedOption].selected = false;
         }
-        selectedOption = index
-        selectedId = id;
+        selectedOption = index;
         $scope.pollData.options[selectedOption].selected = true;
       };
 
+      $scope.hasSelected = function() {
+        return !!selectedOption;
+      };
+
       $scope.saveVote = function() {
-        console.log(selectedId);
-        pollManagementService.setPollVote(selectedId).success(function(data){
-          console.log(data);
+        pollManagementService.setPollVote($scope.pollData.options[selectedOption].id).success(function(data) {
           $state.go('detailView', {
             pollId: pollId,
             pollTitle: $scope.pollTitle

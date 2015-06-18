@@ -7,8 +7,8 @@
   </ion-header-bar>
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="(index, option) in pollData.options" ng-click="selectOption(index, {{option.id}})">{{option.name}}<i ng-if="option.selected" class="icon checked ion-checkmark"></i></ion-item>
+      <ion-item ng-repeat="(index, option) in pollData.options" ng-click="selectOption(index)">{{option.name}}<i ng-if="option.selected" class="icon checked ion-checkmark"></i></ion-item>
     </ion-list>
-    <button class="button button-vote button-light" data-on-release="saveVote()">Vote!</button>
+    <button ng-disabled="!hasSelected()" class="button button-vote button-light" data-on-release="saveVote()">Vote!</button>
   </ion-content>
 </ion-pane>
