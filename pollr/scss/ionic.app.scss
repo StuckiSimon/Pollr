@@ -29,6 +29,10 @@ body {
     color: $midnight;
 }
 
+.input-label, .item-input {
+  color: $midnight;
+}
+
 .bar-header {
   background-color: $midnight;
   h1 {
@@ -46,4 +50,10 @@ body {
     border: 0px;
     font-style: bold;
   }
+}
+
+.button-login {
+  width: 100%;
+  color: $cloud;
+  background-color: $emerald;
 }
