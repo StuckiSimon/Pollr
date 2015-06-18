@@ -1,12 +1,16 @@
 define(['shared/webServiceManager/namespace'], function(namespace) {
   return function(module) {
     module.factory(namespace + ".pollManagementService", ['$http', function($http) {
+      var baseUrl = 'http://pollr.lamatouren.ch/pollr';
       return {
         loadPosts: function() {
-          return $http.get('http://pollr.lamatouren.ch/pollr/polls');
+          return $http.get(baseUrl + '/polls');
         },
         getPollOptions: function(pollId) {
-          return $http.get('http://pollr.lamatouren.ch/pollr/pollOptions?pollId=' + pollId);
+          return $http.get(baseUrl + '/pollOptions?pollId=' + pollId);
+        },
+        getPollStats: function(pollId) {
+          return $http.get(baseUrl + '/pollStat?pollId=' + pollId);
         }
       };
     }]);
