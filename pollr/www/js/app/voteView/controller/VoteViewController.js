@@ -23,7 +23,7 @@ define(['voteView/namespace', 'shared/webServiceManager/namespace'], function(na
       };
 
       $scope.hasSelected = function() {
-        return !!selectedOption;
+        return selectedOption !== undefined;
       };
 
       $scope.saveVote = function() {
