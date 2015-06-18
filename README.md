@@ -7,7 +7,7 @@
  - /authenticate -> implemented
 	 - POST
 	 - parameters: username, password
-		 - example: `{"username"="brudi"&"password"="***"}`
+		 - example: `{"username"="brudi","password"="***"}`
 	 - returns
 		 - success: `{"id":"1","user_name":"brudi","password":"***","real_name":"dave"}`
 		 - error: `{"auth":"false"}`
@@ -42,17 +42,40 @@
 	 - returns
 		 - success: `[{"id":"1","name":"mac","Poll_id":"1"},{"id":"2","name":"kantine","Poll_id":"1"}]`
 		 - error: `{"auth":"false"}`
- - /pollOption -> unnecessary?
-	 - POST
-	 - answerId
  - /poll
 	 - POST
-	 - pollData
-	 - returns pollId
+	 - parameter: title, userId
+		 - example: `{"title"="poll Title","userId"="1"}`
+	 - returns
+		 - success: `{"status":"OK","data":{"id":"19","title":"test","User_id":"1"}}`
+		 - error: 
+			 - unauthenticated: `{"auth":"false"}`
+			 - error by insertion: `{"status":"ERROR","messages":{"messageObject"}}`
  - /pollOption
 	 - POST
-	 - pollId, optionData
-	 - returns optionId
+	 - parameter: name, pollId
+		 - example: `{"name"="mac","pollId"="1"}`
+	 - returns
+		 - success: `{"status":"OK","data":{"id":"6","name":"test","Poll_id":"19"}}`
+		 - error:
+		 	- unauthenticated: `{"auth":"false"}`
+			- error by insertion: `{"status":"ERROR","messages":{"messageObject"}}`
+ - /vote -> 
+	 - POST
+	 - parameter: userId, answerId
+		 - example: `{"userId"="1","answerId"="6"}`
+	 - returns:
+		 - success: `{"status":"OK","data":{"Answer_id":"6","User_id":"1"}}`
+		 - error:
+		 	- unauthenticated: `{"auth":"false"}`
+			- error by insertion: `{"status":"ERROR","messages":{"messageObject"}}`
+ - /hasUserAllreadyVoted
+	 - GET
+	 - parameter: userId, pollId: 
+		 - example:
+	 - returns
+		 - success:
+		 - error: 
  - /pollOption
 	 - DELETE
 	 - optionId
