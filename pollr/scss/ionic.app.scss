@@ -14,6 +14,9 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+$midnight:                            #2c3e50 !important;
+$cloud:                               #ecf0f1 !important;
+$emerald:                             #2ecc71 !important;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
@@ -21,3 +24,20 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+body {
+    background-color: $cloud;
+    color: $midnight;
+}
+
+.bar-header {
+  background-color: $midnight;
+  h1 {
+    color: $cloud;
+  }
+  .button {
+    background-color: $emerald;
+    color: $cloud;
+    border: 0px;
+    font-style: bold;
+  }
+}

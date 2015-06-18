@@ -7674,3 +7674,17 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+body {
+  background-color: #ecf0f1 !important;
+  color: #2c3e50 !important; }
+
+.bar-header {
+  background-color: #2c3e50 !important; }
+  .bar-header h1 {
+    color: #ecf0f1 !important; }
+  .bar-header .button {
+    background-color: #2ecc71 !important;
+    color: #ecf0f1 !important;
+    border: 0px;
+    font-style: bold; }
