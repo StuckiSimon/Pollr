@@ -15,6 +15,9 @@ define(['pollList/namespace', 'shared/webServiceManager/namespace'], function(na
       $scope.openAddPollView = function() {
         $state.go('addPollView');
       };
+      $scope.goBack = function() {
+        parent.history.back();
+      };
 
       $scope.openPoll = function(poll) {
         // TODO: server doesn't return required data -> no alreadyVoted property
