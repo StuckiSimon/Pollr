@@ -18,16 +18,13 @@ require([
   "../../lib/angularjs/angles",
   "../../lib/chartjs/chart"],
   function(loginNamespace, pollListNamespace, voteViewNamespace, detailViewNamespace, addPollViewNamespace, webServiceManagerNamespace, historyHandlerNamespace) {
-    var app = angular.module("main", ["ionic", loginNamespace,
+    angular.module("main", ["ionic", loginNamespace,
       pollListNamespace,
       voteViewNamespace,
       detailViewNamespace,
       addPollViewNamespace,
       webServiceManagerNamespace,
       historyHandlerNamespace]);
-    app.config(['$httpProvider', function($httpProvider) {
-      $httpProvider.defaults.withCredentials = true;
-    }]);
     angular.bootstrap(document, ["main"]
     );
   });
