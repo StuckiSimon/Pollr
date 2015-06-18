@@ -6,8 +6,8 @@
   <ion-content>
     <label class="item item-input">
       <span class="input-label">Option</span>
-      <input type="text">
-      </label>
-      <ion-button class="button button-block button-positive" ng-click="console.log('TODO')">Add</ion-button>
-    </ion-content>
-  </div>
+      <input type="text" ng-model="dialogData.newOption" />
+    </label>
+    <ion-button ng-disabled="!newOptionIsValid();" class="button button-block button-positive" ng-click="addOptionToPollData()">Add</ion-button>
+  </ion-content>
+</div>

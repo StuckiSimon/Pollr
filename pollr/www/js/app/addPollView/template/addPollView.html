@@ -1,6 +1,6 @@
 <ion-pane>
   <ion-header-bar class="bar-stable">
-    <h1 class="title">Create new Poll</h1>
+    <h1 class="title">{{pollData.title.length > 0 ? pollData.title : 'Create new Poll'}}</h1>
     <div class="buttons">
       <button class="button" data-ng-click="openAddChangeOptionDialog()">+</button>
     </div>
@@ -8,10 +8,11 @@
   <ion-content>
     <label class="item item-input">
       <span class="input-label">Poll Title</span>
-      <input type="text">
+      <input type="text" ng-model="pollData.title">
       </label>
-      <ion-list show-delete="data.showDelete">
-        <ion-item ng-repeat="poll in pollData.list" data-ng-click="openPoll(poll)">{{poll.title}}</ion-item>
+      <ion-list>
+        <ion-item ng-repeat="option in pollData.options">{{option.title}}</ion-item>
       </ion-list>
+      <ion-button ng-disabled="!newPollIsValid();" class="button button-block button-positive" ng-click="addOptionToPollData()">Save Poll</ion-button>
     </ion-content>
   </ion-pane>
