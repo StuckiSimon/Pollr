@@ -25,7 +25,7 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace', 'shared/p
 
       // has to be registered only once
       $scope.$on('$destroy', function() {
-        $scope.popover.remove();
+        $scope.addDialog.remove();
       });
 
       $scope.openAddChangeOptionDialog = function(action) {
