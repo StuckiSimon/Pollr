@@ -1,6 +1,6 @@
 define(['voteView/namespace', 'shared/webServiceManager/namespace'], function(namespace, webServiceManagerNamespace) {
   return function(module) {
-    module.controller(namespace + ".voteViewController", ['$scope', '$stateParams', webServiceManagerNamespace + '.pollManagementService', function($scope, $stateParams, pollManagementService) {
+    module.controller(namespace + ".voteViewController", ['$scope', '$state', '$stateParams', webServiceManagerNamespace + '.pollManagementService', function($scope, $state, $stateParams, pollManagementService) {
       var pollId = $stateParams.pollId;
       $scope.pollTitle = $stateParams.pollTitle;
 
@@ -13,17 +13,26 @@ define(['voteView/namespace', 'shared/webServiceManager/namespace'], function(na
       });
 
       var selectedOption = undefined;
+      var selectedId = undefined;
 
-      $scope.selectOption = function(index) {
+      $scope.selectOption = function(index, id) {
         if (selectedOption !== undefined) {
           $scope.pollData.options[selectedOption].selected = false;
         }
-        selectedOption = index;
+        selectedOption = index
+        selectedId = id;
         $scope.pollData.options[selectedOption].selected = true;
       };
 
       $scope.saveVote = function() {
-        console.log(selectedOption); //da din request uf rüefe
+        console.log(selectedId);
+        pollManagementService.setPollVote(selectedId).success(function(data){
+          console.log(data);
+          $state.go('detailView', {
+            pollId: pollId,
+            pollTitle: $scope.pollTitle
+          });
+        });
       };
     }]);
   };
