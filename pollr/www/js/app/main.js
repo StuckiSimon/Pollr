@@ -13,6 +13,7 @@ require([
   "addPollView/module",
   "shared/webServiceManager/module",
   "shared/historyHandler/module",
+  "shared/pollValidator/module",
   "../../lib/angularjs/localstorage",
   "../../lib/angularjs/angles",
   "../../lib/chartjs/chart"],

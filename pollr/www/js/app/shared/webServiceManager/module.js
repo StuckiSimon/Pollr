@@ -5,7 +5,7 @@ define([
   'shared/webServiceManager/service/PollManagementService',
   'shared/webServiceManager/config/setup'],
   function(namespace, sessionManagementService, sessionContextWrapper, pollManagementService, setup) {
-    var module = angular.module(namespace, ["ionic"]);
+    var module = angular.module(namespace, []);
     sessionManagementService(module);
     sessionContextWrapper(module);
     pollManagementService(module);

@@ -1,15 +1,14 @@
-define(['addPollView/namespace', 'shared/webServiceManager/namespace'], function(namespace, webServiceManagerNamespace) {
+define(['addPollView/namespace', 'shared/webServiceManager/namespace', 'shared/pollValidator/namespace'], function(namespace, webServiceManagerNamespace, pollValidatorNamespace) {
   return function(module) {
-    module.controller(namespace + ".addPollViewController", ['$scope', '$ionicModal', webServiceManagerNamespace + '.pollManagementService', function($scope, $ionicModal, pollManagementService) {
+    module.controller(namespace + ".addPollViewController", ['$scope', '$ionicModal', webServiceManagerNamespace + '.pollManagementService', pollValidatorNamespace + '.validator', function($scope, $ionicModal, pollManagementService, validator) {
 
-      var optionMinTextLength = 2,
-        titleMinTextLength = 4;
-
+      // Main Screen Data
       $scope.pollData = {
         title: "",
         options: []
       };
 
+      // Modal Data
       $scope.dialogData = {
         newOption: "",
       };
@@ -24,6 +23,11 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace'], function
       };
       initModal();
 
+      // has to be registered only once
+      $scope.$on('$destroy', function() {
+        $scope.popover.remove();
+      });
+
       $scope.openAddChangeOptionDialog = function(action) {
         $scope.action = action;
         $scope.addDialog.show();
@@ -35,7 +39,7 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace'], function
       };
 
       $scope.addOptionToPollData = function() {
-        if ($scope.dialogData.newOption.length < optionMinTextLength) {
+        if (!$scope.newOptionIsValid()) {
           return;
         }
         $scope.pollData.options.push({
@@ -46,26 +50,11 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace'], function
       };
 
       $scope.newOptionIsValid = function() {
-        var option = $scope.dialogData.newOption,
-          options = $scope.pollData.options;
-        if (option.length >= optionMinTextLength) {
-          for (var i in options) {
-            if (option === options[i].title) {
-              return false;
-            }
-          }
-          return true;
-        }
-        return false;
+        return validator.isValidOption($scope.dialogData.newOption, $scope.pollData.options);
       };
 
       $scope.newPollIsValid = function() {
-        var options = $scope.pollData.options,
-          title = $scope.pollData.title;
-        if (title.length >= titleMinTextLength && options.length > 1) {
-          return true;
-        }
-        return false;
+        return validator.isValidPoll($scope.pollData.title, $scope.pollData.options);
       };
 
     }]);
