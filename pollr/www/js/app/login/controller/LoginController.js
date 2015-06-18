@@ -7,10 +7,15 @@ define(['login/namespace', 'shared/webServiceManager/namespace'], function(names
           password: ""
         }
       });
-
-      $scope.onRelease = function() {
-        sessionManagementService.login($scope.storage.user.username, $scope.storage.user.password);
+      $scope.authenticationFailed = false;
+      $scope.loginSuccess = function() {
         $state.go('pollList');
+      }
+      $scope.loginError = function() {
+        $scope.authenticationFailed = true;
+      }
+      $scope.onRelease = function() {
+        sessionManagementService.login($scope.storage.user.username, $scope.storage.user.password, $scope.loginSuccess, $scope.loginError);
       };
     }]);
   };
