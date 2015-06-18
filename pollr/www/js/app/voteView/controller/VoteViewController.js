@@ -2,6 +2,7 @@ define(['voteView/namespace', 'shared/webServiceManager/namespace'], function(na
   return function(module) {
     module.controller(namespace + ".voteViewController", ['$scope', '$stateParams', webServiceManagerNamespace + '.pollManagementService', function($scope, $stateParams, pollManagementService) {
       var pollId = $stateParams.pollId;
+      $scope.pollTitle = $stateParams.pollTitle;
 
       $scope.pollData = {
         options: []
@@ -19,6 +20,9 @@ define(['voteView/namespace', 'shared/webServiceManager/namespace'], function(na
         }
         selectedOption = index;
         $scope.pollData.options[selectedOption].selected = true;
+      };
+      $scope.saveVote = function() {
+        console.log(selectedOption); //da din request uf rüefe
       };
     }]);
   };

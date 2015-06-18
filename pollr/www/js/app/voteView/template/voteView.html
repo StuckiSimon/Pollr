@@ -3,11 +3,12 @@
     <div class="buttons">
       <history-back></history-back>
     </div>
-    <h1 class="title">Pollr - Your Polls</h1>
+    <h1 class="title">Pollr - {{pollTitle}}</h1>
   </ion-header-bar>
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="(index, option) in pollData.options" ng-click="selectOption(index)"><i ng-if="option.selected" class="icon ion-checkmark"></i>{{option.name}}</ion-item>
+      <ion-item ng-repeat="(index, option) in pollData.options" ng-click="selectOption(index)">{{option.name}}<i ng-if="option.selected" class="icon checked ion-checkmark"></i></ion-item>
     </ion-list>
+    <button class="button button-vote button-light" data-on-release="saveVote()">Vote!</button>
   </ion-content>
 </ion-pane>

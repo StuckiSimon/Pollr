@@ -21,12 +21,14 @@ define(['pollList/namespace', 'shared/webServiceManager/namespace'], function(na
         if (poll.voted) {
           // open stats view
           $state.go('detailView', {
-            pollId: poll.id
+            pollId: poll.id,
+            pollTitle: poll.title
           });
         } else {
           // open vote view
           $state.go('voteView', {
-            pollId: poll.id
+            pollId: poll.id,
+            pollTitle: poll.title
           });
         }
       };
