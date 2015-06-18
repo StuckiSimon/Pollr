@@ -13,7 +13,9 @@ require([
   "addPollView/module",
   "shared/webServiceManager/module",
   "shared/historyHandler/module",
-  "../../lib/angularjs/localstorage"],
+  "../../lib/angularjs/localstorage",
+  "../../lib/angularjs/angles",
+  "../../lib/chartjs/chart"],
   function(loginNamespace, pollListNamespace, voteViewNamespace, detailViewNamespace, addPollViewNamespace, webServiceManagerNamespace, historyHandlerNamespace) {
     var app = angular.module("main", ["ionic", loginNamespace,
       pollListNamespace,
