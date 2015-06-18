@@ -11,6 +11,9 @@ define(['shared/webServiceManager/namespace'], function(namespace) {
         },
         getPollStats: function(pollId) {
           return $http.get(baseUrl + '/pollStat?pollId=' + pollId);
+        },
+        setPollVote: function(answerId) {
+          return $http.post(baseUrl + '/vote?answerId=' + answerId);
         }
       };
     }]);
