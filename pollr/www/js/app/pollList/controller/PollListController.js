@@ -1,6 +1,6 @@
 define(['pollList/namespace', 'shared/webServiceManager/namespace'], function(namespace, webServiceManagerNamespace) {
   return function(module) {
-    module.controller(namespace + ".pollListController", ['$scope', '$state', '$http', webServiceManagerNamespace + '.pollManagementService', function($scope, $state, $http, pollManagementService) {
+    module.controller(namespace + ".pollListController", ['$scope', '$state', webServiceManagerNamespace + '.pollManagementService', function($scope, $state, pollManagementService) {
 
       $scope.pollData = {
         list: []
@@ -14,9 +14,6 @@ define(['pollList/namespace', 'shared/webServiceManager/namespace'], function(na
 
       $scope.openAddPollView = function() {
         $state.go('addPollView');
-      };
-      $scope.goBack = function() {
-        parent.history.back();
       };
 
       $scope.openPoll = function(poll) {
@@ -35,8 +32,6 @@ define(['pollList/namespace', 'shared/webServiceManager/namespace'], function(na
       };
 
       $scope.reloadPollList();
-
-      console.log($scope);
 
     }]);
   };
