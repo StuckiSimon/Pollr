@@ -9,6 +9,8 @@ define(['pollList/namespace', 'shared/webServiceManager/namespace'], function(na
       $scope.reloadPollList = function() {
         pollManagementService.loadPosts().success(function(data) {
           $scope.pollData.list = data;
+        }).finally(function() {
+          $scope.$broadcast('scroll.refreshComplete')
         });
       };
 
