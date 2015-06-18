@@ -70,12 +70,13 @@
 		 	- unauthenticated: `{"auth":"false"}`
 			- error by insertion: `{"status":"ERROR","messages":{"messageObject"}}`
  - /hasUserAllreadyVoted
-	 - GET
+	 - POST
 	 - parameter: userId, pollId: 
-		 - example:
+		 - example: `{"userId"="1","pollId"="2"}`
 	 - returns
-		 - success:
+		 - success: `{"voted":"true"}` or `{"voted":"false"}`
 		 - error: 
+			 - unauthenticated: `{"auth":"false"}`
  - /pollOption
 	 - DELETE
 	 - optionId
