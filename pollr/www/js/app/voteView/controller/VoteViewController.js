@@ -21,6 +21,7 @@ define(['voteView/namespace', 'shared/webServiceManager/namespace'], function(na
         selectedOption = index;
         $scope.pollData.options[selectedOption].selected = true;
       };
+
       $scope.saveVote = function() {
         console.log(selectedOption); //da din request uf rüefe
       };

@@ -1,11 +1,23 @@
 <ion-pane>
   <ion-header-bar class="bar-stable">
     <div class="buttons">
-      <history-back></history-back>
+      <history-back>
+      </history-back>
     </div>
     <h1 class="title">Pollr - {{pollTitle}}</h1>
   </ion-header-bar>
   <ion-content>
-    <canvas chart="Doughnut" options="options" data="chart"></canvas>
+    <canvas chart="Doughnut" data="pollData.chart" width="200">
+    </canvas>
+    <ion-list>
+      <ion-item ng-repeat="option in pollData.table">
+        <span>{{option.title}}</span>
+        <div class="itemRight">
+          <span>{{option.votes}}</span>
+          <span class="itemColor" style="background-color: {{option.color}};">
+          </span>
+        </div>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-pane>

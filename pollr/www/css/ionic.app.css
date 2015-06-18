@@ -7709,7 +7709,20 @@ body {
       border-right: 1px #ecf0f1 !important solid;
       font-size: 140%; }
 
-.button-login {
+.button-login, .button-vote {
   width: 100%;
   color: #ecf0f1 !important;
   background-color: #2ecc71 !important; }
+
+.itemRight {
+  float: right; }
+
+.itemColor {
+  margin-left: 5px;
+  float: right;
+  width: 20px;
+  height: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  background: gray; }

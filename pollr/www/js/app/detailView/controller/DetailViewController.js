@@ -3,38 +3,34 @@ define(['detailView/namespace', 'shared/webServiceManager/namespace'], function(
     module.controller(namespace + ".detailViewController", ['$scope', '$stateParams', webServiceManagerNamespace + '.pollManagementService', function($scope, $stateParams, pollManagementService) {
       var pollId = $stateParams.pollId;
 
-      $scope.chart = [
-        {
-          value: 300,
-          color: "#F7464A",
-          highlight: "#FF5A5E",
-          label: "Red"
-        },
-        {
-          value: 50,
-          color: "#46BFBD",
-          highlight: "#5AD3D1",
-          label: "Green"
-        },
-        {
-          value: 100,
-          color: "#FDB45C",
-          highlight: "#FFC870",
-          label: "Yellow"
-        }
-      ];
-
-      $scope.options = {
-
-      };
+      $scope.pollTitle = $stateParams.pollTitle;
 
       $scope.pollData = {
-        options: []
+        chart: [],
+        table: []
       };
 
       pollManagementService.getPollStats(pollId).success(function(data) {
         console.log(data);
-        $scope.pollData.options = data;
+        var chart = [],
+          table = [],
+          answers = data.answers;
+        var color = ['#1abc9c', '#3498db', '#9b59b6', '#f1c40f', '#27ae60', '#c0392b'];
+        for (var i in answers) {
+          var answer = answers[i];
+          chart.push({
+            value: parseInt(answer.votes),
+            color: color[i]
+          });
+          table.push({
+            title: answer.name,
+            votes: answer.votes,
+            color: color[i]
+          });
+        }
+        $scope.pollData.chart = chart;
+        $scope.pollData.table = table;
+
       });
     }]);
   };

@@ -46,7 +46,7 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace'], function
         var option = $scope.dialogData.newOption,
           options = $scope.pollData.options;
         if (option.length > 0) {
-          for (i in options) {
+          for (var i in options) {
             if (option === options[i].title) {
               return false;
             }

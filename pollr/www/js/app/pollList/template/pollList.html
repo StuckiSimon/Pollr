@@ -11,7 +11,7 @@
   <ion-content>
     <ion-refresher pulling-text="Pull to refresh" data-on-refresh="reloadPollList()">
     </ion-refresher>
-    <ion-list show-delete="data.showDelete">
+    <ion-list>
       <ion-item ng-repeat="poll in pollData.list" data-ng-click="openPoll(poll)">{{poll.title}}</ion-item>
     </ion-list>
   </ion-content>
