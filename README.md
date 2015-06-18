@@ -33,7 +33,7 @@
 	 - parameter: pollId
 		 - example: `http://localhost/_PollrRestApiV2/pollr/pollStat?pollId=1`
 	 - returns
-		 - success: `[[{"id":"1","name":"mac","Poll_id":"1","voters":2},{"id":"2","name":"kantine","Poll_id":"1","voters":0}],{"numberOfPossibleVoters":2}]`
+		 - success: `{"id":"1","title":"Mittag","User_id":"1","answers":[{"id":"1","name":"mac","Poll_id":"1"},{"id":"2","name":"kantine","Poll_id":"1"}]}`
 		 - error: `{"auth":"false"}`
  - /pollOptions
 	 - GET
@@ -44,8 +44,8 @@
 		 - error: `{"auth":"false"}`
  - /poll
 	 - POST
-	 - parameter: title, userId
-		 - example: `{"title"="poll Title","userId"="1"}`
+	 - parameter: title
+		 - example: `{"title"="poll Title"}`
 	 - returns
 		 - success: `{"status":"OK","data":{"id":"19","title":"test","User_id":"1"}}`
 		 - error: 
@@ -62,8 +62,8 @@
 			- error by insertion: `{"status":"ERROR","messages":{"messageObject"}}`
  - /vote
 	 - POST
-	 - parameter: userId, answerId
-		 - example: `{"userId"="1","answerId"="6"}`
+	 - parameter: answerId
+		 - example: `{"answerId"="6"}`
 	 - returns:
 		 - success: `{"status":"OK","data":{"Answer_id":"6","User_id":"1"}}`
 		 - error:
@@ -71,8 +71,8 @@
 			- error by insertion: `{"status":"ERROR","messages":{"messageObject"}}`
  - /hasUserAllreadyVoted
 	 - POST
-	 - parameter: userId, pollId: 
-		 - example: `{"userId"="1","pollId"="2"}`
+	 - parameter: pollId: 
+		 - example: `{"pollId"="2"}`
 	 - returns
 		 - success: `{"voted":"true"}` or `{"voted":"false"}`
 		 - error: 
