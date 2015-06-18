@@ -17,6 +17,8 @@ $dark:                            #444 !default;
 $midnight:                            #2c3e50 !important;
 $cloud:                               #ecf0f1 !important;
 $emerald:                             #2ecc71 !important;
+$alizarin:                             #e74c3c !important;
+
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
@@ -52,7 +54,7 @@ body {
       background-color: $emerald;
       color: $cloud;
       border: 0px;
-      font-style: bold;
+      font-weight: bold;
       width: 100%;
       font-size: 140%;
     }
@@ -62,7 +64,7 @@ body {
       background-color: $midnight;
       color: $cloud;
       border: 0px;
-      font-style: bold;
+      font-weight: bold;
       width: 100%;
       border-right: 1px $cloud solid;
       font-size: 140%;
@@ -76,17 +78,15 @@ body {
   background-color: $emerald;
 }
 
-.itemRight {
-  float: right;
-}
+.error-message {
+  width: 100%;
+  background-color: $alizarin;
+  color: $cloud;
+  padding: 4%;
+  text-align: center;
 
-.itemColor {
-  margin-left: 5px;
-  float: right;
-  width: 20px;
-  height: 20px;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 4px;
-  background: gray;
+  .error-message-span {
+    font-size: 120%;
+  }
+
 }

@@ -4,9 +4,7 @@
     <h1 class="title">Pollr</h1>
   </ion-header-bar>
   <ion-content>
-    <div class="assertive" ng-show="authenticationFailed">
-        Your username or your password is wrong!
-    </div>
+
     <label class="item item-input">
       <span class="input-label">Username</span>
       <input type="text" data-ng-model="storage.user.username"/>
@@ -16,5 +14,8 @@
       <input type="password" data-ng-model="storage.user.password"/>
     </label>
     <button class="button button-login button-light" data-on-release="onRelease()">Login</button>
+    <div class="assertive error-message login-failed" ng-show="authenticationFailed">
+        <span class="error-message-span">Your username or your password is wrong!</span>
+    </div>
   </ion-content>
 </ion-pane>
