@@ -5,9 +5,9 @@
       </history-back>
     </div>
     <h1 class="title">{{pollData.title.length > 0 ? pollData.title : 'Create new Poll'}}</h1>
-    <div class="buttons">
-      <button class="button button-assertive" ng-if="pollData.options.length > 0" ng-click="toggleDelete()">-</button>
-      <button class="button" data-ng-click="openAddChangeOptionDialog()">+</button>
+    <div class="buttons buttons-poll-option">
+      <button class="button button-assertive button-remove-option" ng-if="pollData.options.length > 0" ng-click="toggleDelete()">-</button>
+      <button class="button button-add-option" data-ng-click="openAddChangeOptionDialog()">+</button>
     </div>
   </ion-header-bar>
   <ion-content>
