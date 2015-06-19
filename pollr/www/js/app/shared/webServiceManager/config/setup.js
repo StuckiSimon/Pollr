@@ -51,6 +51,7 @@ define(['shared/webServiceManager/namespace'], function(namespace) {
       $httpProvider.interceptors.push(['$q', '$injector', function($q, $injector) {
         return {
           responseError: function(rejection) {
+            console.log(rejection);
             if (rejection.status == 0) {
               var $ionicPopup = $injector.get("$ionicPopup");
               $ionicPopup.alert({

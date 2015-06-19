@@ -158,3 +158,11 @@ body {
 .item {
   background-color: transparent;
 }
+
+.item-divider {
+  color: $midnight;
+}
+
+.poll-title {
+  border-bottom: 2px solid $midnight;
+}
