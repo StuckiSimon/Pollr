@@ -102,6 +102,7 @@ body {
 
 }
 
+
 .button-add, .button-save {
   background-color: $emerald;
   color: $cloud;
@@ -109,4 +110,19 @@ body {
   font-weight: bold;
   width: 100%;
   font-size: 140%;
+
+.itemRight {
+  float: right;
+}
+
+.itemColor {
+  margin-left: 5px;
+  float: right;
+  width: 20px;
+  height: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  background: gray;
+
 }

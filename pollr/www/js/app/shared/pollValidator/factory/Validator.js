@@ -8,10 +8,7 @@ define(['shared/pollValidator/namespace'], function(namespace) {
 
       return {
         isValidPoll: function(title, options) {
-          if (title.length >= titleMinTextLength && options.length > 1) {
-            return true;
-          }
-          return false;
+          return title.length >= titleMinTextLength && options.length > 1;
         },
         isValidOption: function(newOption, existingOptions) {
           if (newOption.length >= optionMinTextLength) {

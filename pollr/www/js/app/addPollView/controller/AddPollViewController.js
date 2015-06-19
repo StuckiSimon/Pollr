@@ -43,7 +43,7 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace', 'shared/p
           return;
         }
         $scope.pollData.options.push({
-          title: $scope.dialogData.newOption
+          name: $scope.dialogData.newOption
         });
         $scope.dialogData.newOption = "";
         $scope.leaveAddChangeOptionDialog();
@@ -57,7 +57,25 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace', 'shared/p
         return validator.isValidPoll($scope.pollData.title, $scope.pollData.options);
       };
 
+      /**
+       * remove unnecessary properties from object such as hashkey
+       */
+      var cleanAnswers = function() {
+        var answersClean = [],
+          answers = $scope.pollData.options;
+        for (var i in answers) {
+          answersClean.push({
+            name: answers[i].name
+          });
+        }
+        return answersClean;
+      };
+
       $scope.createPoll = function() {
+        pollManagementService.createPoll({
+          title: $scope.pollData.title,
+          answers: cleanAnswers()
+        });
         historyService.goBack();
       };
 

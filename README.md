@@ -45,7 +45,7 @@
  - /poll
 	 - POST
 	 - parameter: title
-		 - example: `{"title"="poll Title"}`
+		 - example: `{"title":"poll Title","answers":[{"name":"mac"},{"name":"kantine"}]}`
 	 - returns
 		 - success: `{"status":"OK","data":{"id":"19","title":"test","User_id":"1"}}`
 		 - error: 
@@ -69,14 +69,6 @@
 		 - error:
 		 	- unauthenticated: `{"auth":"false"}`
 			- error by insertion: `{"status":"ERROR","messages":{"messageObject"}}`
- - /hasUserAllreadyVoted
-	 - POST
-	 - parameter: pollId: 
-		 - example: `{"pollId"="2"}`
-	 - returns
-		 - success: `{"voted":"true"}` or `{"voted":"false"}`
-		 - error: 
-			 - unauthenticated: `{"auth":"false"}`
  - /pollOption -> not implemented
 	 - DELETE
 	 - optionId

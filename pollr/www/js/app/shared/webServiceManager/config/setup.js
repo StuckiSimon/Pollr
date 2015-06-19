@@ -1,7 +1,11 @@
 define(['shared/webServiceManager/namespace'], function(namespace) {
   return function(module) {
-    // Use x-www-form-urlencoded Content-Type
     module.config(['$httpProvider', function($httpProvider) {
+
+      // permit CORS cookies
+      $httpProvider.defaults.withCredentials = true;
+
+      // Use x-www-form-urlencoded Content-Type
       $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
 
       /**

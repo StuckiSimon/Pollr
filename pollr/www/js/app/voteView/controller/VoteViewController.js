@@ -1,6 +1,6 @@
-define(['voteView/namespace', 'shared/webServiceManager/namespace'], function(namespace, webServiceManagerNamespace) {
+define(['voteView/namespace', 'shared/webServiceManager/namespace', 'shared/historyHandler/namespace'], function(namespace, webServiceManagerNamespace, historyHandlerNamespace) {
   return function(module) {
-    module.controller(namespace + ".voteViewController", ['$scope', '$state', '$stateParams', webServiceManagerNamespace + '.pollManagementService', function($scope, $state, $stateParams, pollManagementService) {
+    module.controller(namespace + ".voteViewController", ['$scope', '$state', '$stateParams', webServiceManagerNamespace + '.pollManagementService', historyHandlerNamespace + '.historyService', function($scope, $state, $stateParams, pollManagementService, historyService) {
       var pollId = $stateParams.pollId;
       $scope.pollTitle = $stateParams.pollTitle;
 
@@ -27,6 +27,7 @@ define(['voteView/namespace', 'shared/webServiceManager/namespace'], function(na
       };
 
       $scope.saveVote = function() {
+        historyService.postponeAdditionalBackStep();
         pollManagementService.setPollVote($scope.pollData.options[selectedOption].id).success(function(data) {
           $state.go('detailView', {
             pollId: pollId,
