@@ -13,6 +13,8 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace', 'shared/p
         newOption: "",
       };
 
+      $scope.showDelete = false;
+
       var initModal = function() {
         $ionicModal.fromTemplateUrl('js/app/addPollView/template/addChangeOptionDialog.html', function(modal) {
           $scope.addDialog = modal;
@@ -47,6 +49,10 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace', 'shared/p
         });
         $scope.dialogData.newOption = "";
         $scope.leaveAddChangeOptionDialog();
+      };
+
+      $scope.removeOption = function(index) {
+        $scope.pollData.options.splice(index, 1);
       };
 
       $scope.newOptionIsValid = function() {
