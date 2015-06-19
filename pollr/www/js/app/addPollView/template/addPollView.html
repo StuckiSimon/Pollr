@@ -6,7 +6,7 @@
     </div>
     <h1 class="title">{{pollData.title.length > 0 ? pollData.title : 'Create new Poll'}}</h1>
     <div class="buttons">
-      <button class="button button-assertive" data-ng-click="showDelete = !showDelete">-</button>
+      <button class="button button-assertive" ng-show="pollData.options.length > 0" ng-click="showDelete = !showDelete">-</button>
       <button class="button" data-ng-click="openAddChangeOptionDialog()">+</button>
     </div>
   </ion-header-bar>
@@ -16,6 +16,9 @@
       <input type="text" ng-model="pollData.title"/>
     </label>
     <ion-list show-delete="showDelete">
+      <ion-item ng-if="pollData.options.length === 0">
+        Add options using the + button on the top right corner
+      </ion-item>
       <ion-item ng-repeat="option in pollData.options">
         <ion-delete-button class="ion-minus-circled" ng-click="removeOption($index)">
         </ion-delete-button>
