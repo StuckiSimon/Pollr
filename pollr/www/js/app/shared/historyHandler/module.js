@@ -1,3 +1,6 @@
+/**
+ * History Handler is a simple history manager providing a directive and a service
+ */
 define([
   'shared/historyHandler/namespace',
   'shared/historyHandler/factory/HistoryService',

@@ -1,3 +1,6 @@
+/**
+ * main entry point for app, loads all direct dependencies and initializes app using bootstrap
+ */
 require([
   "login/namespace",
   "pollList/namespace",
@@ -18,6 +21,7 @@ require([
   "../../lib/angularjs/angles",
   "../../lib/chartjs/chart"],
   function(loginNamespace, pollListNamespace, voteViewNamespace, detailViewNamespace, addPollViewNamespace, webServiceManagerNamespace, historyHandlerNamespace) {
+    // define module
     angular.module("main", ["ionic", loginNamespace,
       pollListNamespace,
       voteViewNamespace,
@@ -25,6 +29,7 @@ require([
       addPollViewNamespace,
       webServiceManagerNamespace,
       historyHandlerNamespace]);
+    //bootstrap
     angular.bootstrap(document, ["main"]
     );
   });
