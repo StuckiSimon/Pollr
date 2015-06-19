@@ -83,12 +83,6 @@ body {
   width: 10%;
 }
 
-.button-login, .button-vote {
-  width: 100%;
-  color: $cloud;
-  background-color: $emerald;
-}
-
 .error-message {
   width: 100%;
   background-color: $alizarin;
@@ -103,13 +97,16 @@ body {
 }
 
 
-.button-add, .button-save {
+.button-add, .button-save, .button-login, .button-vote {
   background-color: $emerald;
   color: $cloud;
   border: 0px;
   font-weight: bold;
   width: 100%;
   font-size: 140%;
+  position: absolute;
+  bottom: 0px;
+  margin: 0px !important;
 }
 
 .itemRight {
@@ -126,4 +123,8 @@ body {
   border-radius: 4px;
   background: gray;
 
+}
+
+.scroll {
+  height: 100%;
 }

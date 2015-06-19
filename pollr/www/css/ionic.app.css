@@ -7719,11 +7719,6 @@ body {
   font-size: 140%;
   width: 10%; }
 
-.button-login, .button-vote {
-  width: 100%;
-  color: #ecf0f1 !important;
-  background-color: #2ecc71 !important; }
-
 .error-message {
   width: 100%;
   background-color: #e74c3c !important;
@@ -7733,13 +7728,16 @@ body {
   .error-message .error-message-span {
     font-size: 120%; }
 
-.button-add, .button-save {
+.button-add, .button-save, .button-login, .button-vote {
   background-color: #2ecc71 !important;
   color: #ecf0f1 !important;
   border: 0px;
   font-weight: bold;
   width: 100%;
-  font-size: 140%; }
+  font-size: 140%;
+  position: absolute;
+  bottom: 0px;
+  margin: 0px !important; }
 
 .itemRight {
   float: right; }
@@ -7753,3 +7751,6 @@ body {
   border-style: solid;
   border-radius: 4px;
   background: gray; }
+
+.scroll {
+  height: 100%; }
