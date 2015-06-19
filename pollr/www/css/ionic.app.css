@@ -7709,6 +7709,16 @@ body {
       border-right: 1px #ecf0f1 !important solid;
       font-size: 140%; }
 
+.button-back {
+  background-color: #2c3e50 !important;
+  color: #ecf0f1 !important;
+  border: 0px;
+  font-weight: bold;
+  width: 100%;
+  border-right: 1px #ecf0f1 !important solid;
+  font-size: 140%;
+  width: 10%; }
+
 .button-login, .button-vote {
   width: 100%;
   color: #ecf0f1 !important;
@@ -7722,3 +7732,11 @@ body {
   text-align: center; }
   .error-message .error-message-span {
     font-size: 120%; }
+
+.button-add, .button-save {
+  background-color: #2ecc71 !important;
+  color: #ecf0f1 !important;
+  border: 0px;
+  font-weight: bold;
+  width: 100%;
+  font-size: 140%; }

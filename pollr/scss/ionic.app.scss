@@ -72,6 +72,17 @@ body {
   }
 }
 
+.button-back {
+  background-color: $midnight;
+  color: $cloud;
+  border: 0px;
+  font-weight: bold;
+  width: 100%;
+  border-right: 1px $cloud solid;
+  font-size: 140%;
+  width: 10%;
+}
+
 .button-login, .button-vote {
   width: 100%;
   color: $cloud;
@@ -89,4 +100,13 @@ body {
     font-size: 120%;
   }
 
+}
+
+.button-add, .button-save {
+  background-color: $emerald;
+  color: $cloud;
+  border: 0px;
+  font-weight: bold;
+  width: 100%;
+  font-size: 140%;
 }

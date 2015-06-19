@@ -1,6 +1,6 @@
 <div class="modal">
   <ion-header-bar>
-    <ion-button class="button icon-left ion-chevron-left button-clear" ng-click="leaveAddChangeOptionDialog()">Cancel</ion-button>
+    <button class="button-back ion-chevron-left" ng-click="leaveAddChangeOptionDialog()"></button>
     <h1 class="title">Add option</h1>
   </ion-header-bar>
   <ion-content>
@@ -8,6 +8,6 @@
       <span class="input-label">Option</span>
       <input type="text" ng-model="dialogData.newOption" />
     </label>
-    <ion-button ng-disabled="!newOptionIsValid();" class="button button-block button-positive" ng-click="addOptionToPollData()">Add</ion-button>
+    <ion-button ng-disabled="!newOptionIsValid();" class="button button-block button-positive button-add" ng-click="addOptionToPollData()">Add</ion-button>
   </ion-content>
 </div>
