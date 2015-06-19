@@ -9,7 +9,7 @@ define(['shared/webServiceManager/namespace'], function(namespace) {
       $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
 
       /**
-       * The workhorse; converts an object to x-www-form-urlencoded serialization.
+       * converts an object to x-www-form-urlencoded serialization.
        * @param {Object} obj
        * @return {String}
        */
@@ -46,6 +46,22 @@ define(['shared/webServiceManager/namespace'], function(namespace) {
       $httpProvider.defaults.transformRequest = [function(data) {
         return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
       }];
+
+      // interceptor if no connection is available
+      $httpProvider.interceptors.push(['$q', '$injector', function($q, $injector) {
+        return {
+          responseError: function(rejection) {
+            if (rejection.status == 0) {
+              var $ionicPopup = $injector.get("$ionicPopup");
+              $ionicPopup.alert({
+                title: 'Check your Connection',
+                template: 'You do not have an internet connection'
+              });
+            }
+            return $q.reject(rejection);
+          }
+        };
+      }]);
     }]);
   };
 });
