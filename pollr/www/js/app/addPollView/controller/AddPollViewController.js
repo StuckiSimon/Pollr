@@ -13,12 +13,14 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace', 'shared/p
         newOption: "",
       };
 
+      // indicates whether the delete functionality should be shown
       $scope.showDelete = false;
 
       $scope.toggleDelete = function() {
         $scope.showDelete = !$scope.showDelete;
       };
 
+      // initializes the modal used for adding options
       var initModal = function() {
         $ionicModal.fromTemplateUrl('js/app/addPollView/template/addChangeOptionDialog.html', function(modal) {
           $scope.addDialog = modal;
@@ -45,6 +47,7 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace', 'shared/p
       };
 
       $scope.addOptionToPollData = function() {
+        // only add option when it is valid, otherwise ignore
         if (!$scope.newOptionIsValid()) {
           return;
         }
@@ -55,6 +58,7 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace', 'shared/p
         $scope.leaveAddChangeOptionDialog();
       };
 
+      // remove option
       $scope.removeOption = function(index) {
         $scope.pollData.options.splice(index, 1);
       };
@@ -81,6 +85,7 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace', 'shared/p
         return answersClean;
       };
 
+      // create the poll using the service and return to overview
       $scope.createPoll = function() {
         pollManagementService.createPoll({
           title: $scope.pollData.title,
