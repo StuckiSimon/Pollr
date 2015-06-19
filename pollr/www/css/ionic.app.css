@@ -7733,7 +7733,6 @@ body {
   .error-message .error-message-span {
     font-size: 120%; }
 
-<<<<<<< HEAD
 .button-add, .button-save {
   background-color: #2ecc71 !important;
   color: #ecf0f1 !important;
@@ -7741,7 +7740,7 @@ body {
   font-weight: bold;
   width: 100%;
   font-size: 140%; }
-=======
+
 .itemRight {
   float: right; }
 
@@ -7754,4 +7753,3 @@ body {
   border-style: solid;
   border-radius: 4px;
   background: gray; }
->>>>>>> adb76980793b5f391f9f5151f26c8a724ab76291
