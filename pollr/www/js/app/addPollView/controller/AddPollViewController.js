@@ -15,6 +15,10 @@ define(['addPollView/namespace', 'shared/webServiceManager/namespace', 'shared/p
 
       $scope.showDelete = false;
 
+      $scope.toggleDelete = function() {
+        $scope.showDelete = !$scope.showDelete;
+      };
+
       var initModal = function() {
         $ionicModal.fromTemplateUrl('js/app/addPollView/template/addChangeOptionDialog.html', function(modal) {
           $scope.addDialog = modal;

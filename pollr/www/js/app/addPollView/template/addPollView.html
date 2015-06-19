@@ -6,7 +6,7 @@
     </div>
     <h1 class="title">{{pollData.title.length > 0 ? pollData.title : 'Create new Poll'}}</h1>
     <div class="buttons">
-      <button class="button button-assertive" ng-show="pollData.options.length > 0" ng-click="showDelete = !showDelete">-</button>
+      <button class="button button-assertive" ng-if="pollData.options.length > 0" ng-click="toggleDelete()">-</button>
       <button class="button" data-ng-click="openAddChangeOptionDialog()">+</button>
     </div>
   </ion-header-bar>
